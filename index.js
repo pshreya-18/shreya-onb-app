@@ -41,4 +41,3 @@ function showTimes() {
   }
   return result
 }
-~
