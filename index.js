@@ -42,3 +42,33 @@ function showTimes() {
   }
   return result
 }
+
+function getHerokuSubdomain() {
+  console.log('--- Getting Heroku Subdomain ---')
+  console.log('### HEROKU_APP_NAME:', process.env.HEROKU_APP_NAME)
+  console.log('### HEROKU_PR_NUMBER:', process.env.HEROKU_PR_NUMBER)
+  console.log('### HEROKU_BRANCH:', process.env.HEROKU_BRANCH)
+
+  if (!process.env.HEROKU_PR_NUMBER && !process.env.HEROKU_BRANCH) {
+    console.error('Unable to resolve process.env.HEROKU_PR_NUMBER Heroku PR number or branch found')
+    return
+  }
+
+  if (process.env.HEROKU_PR_NUMBER) {
+    // pr-1234 => pr-1234
+    return `pr-${process.env.HEROKU_PR_NUMBER}`
+  }
+
+  if (process.env.HEROKU_BRANCH) {
+    // long-branch-name => br-long-branc
+    // Take the first 10 characters
+    const firstTenChars = process.env.HEROKU_BRANCH.substring(0, 10)
+
+    // Removing trailing hyphen
+    const withoutTrailingHyphen = firstTenChars.endsWith('-')
+      ? firstTenChars.slice(0, -1)
+      : firstTenChars
+
+    // Concatenate with "br-"
+    return `br-${withoutTrailingHyphen}`
+  }
