@@ -1,6 +1,3 @@
-console.log('### HEROKU_APP_NAME:', process.env.HEROKU_APP_NAME)
-console.log('### HEROKU_PR_NUMBER:', process.env.HEROKU_PR_NUMBER)
-console.log('### HEROKU_BRANCH:', process.env.HEROKU_BRANCH)
 
 const cool = require('cool-ascii-faces')
 const express = require('express')
