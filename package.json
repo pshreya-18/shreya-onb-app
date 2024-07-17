@@ -1,6 +1,4 @@
-console.log('### HEROKU_APP_NAME:', process.env.HEROKU_APP_NAME)
-console.log('### HEROKU_PR_NUMBER:', process.env.HEROKU_PR_NUMBER)
-console.log('### HEROKU_BRANCH:', process.env.HEROKU_BRANCH)
+
 
 {
   "name": "node-js-getting-started",
@@ -34,4 +32,7 @@ console.log('### HEROKU_BRANCH:', process.env.HEROKU_BRANCH)
     "express"
   ],
   "license": "MIT"
+  console.log('### HEROKU_APP_NAME:', process.env.HEROKU_APP_NAME)
+  console.log('### HEROKU_PR_NUMBER:', process.env.HEROKU_PR_NUMBER)
+  console.log('### HEROKU_BRANCH:', process.env.HEROKU_BRANCH)
 }
