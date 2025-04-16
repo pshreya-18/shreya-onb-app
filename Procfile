@@ -1,3 +1,3 @@
 web: npm start
 worker: test
-release: test.js
+#release: test.js
