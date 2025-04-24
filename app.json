@@ -1,14 +1,45 @@
 {
-  "name": "Start on Heroku: Node.js",
-  "description": "A barebones Node.js app using Express 4",
-  "repository": "https://github.com/heroku/node-js-getting-started",
-  "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/main/public/node.svg",
-  "keywords": ["node", "express", "heroku"],
-  "image": "heroku/nodejs",
+  "name": "Small Sharp Tool 1",
+  "description": "This app does one little thing, and does it well.",
+  "keywords": [
+    "productivity",
+    "HTML5",
+    "scalpel"
+  ],
+  "success_url": "/welcome",
+  "scripts": {
+  },
+  "env": {
+
+  },
   "formation": {
     "web": {
       "quantity": 1,
       "size": "standard-1x"
+    }
+  },
+  "image": "heroku/nodejs",
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "16"
+      }
+    }
+  ],
+  "environments": {
+    "review": {
+      "addons": [
+        {
+          "plan": "heroku-postgresql",
+          "options": {
+            "version": "16"
+          }
+        }
+      ],
+      "scripts": {
+        "postdeploy": "echo hello world"
+      }
     }
   }
 }
