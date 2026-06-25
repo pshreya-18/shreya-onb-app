@@ -33,7 +33,9 @@
         {
           "plan": "heroku-postgresql",
           "options": {
-            "version": "16"
+            "version": "16",
+            "fork": "shreya-onb-app::DATABASE_URL",
+            "fast": true
           }
         }
       ],
