@@ -31,7 +31,7 @@
     "review": {
       "addons": [
         {
-          "plan": "heroku-postgresql",
+          "plan": "heroku-postgresql:standard-0",
           "options": {
             "version": "16",
             "fork": "shreya-onb-app::DATABASE_URL",
